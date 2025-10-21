@@ -16,13 +16,19 @@ def demo(request):
     qs = PageVisit.objects.all()
     ps = PageVisit.objects.filter(path = request.path)
     path = request.path
-    print('path',path)
+    try:
+        precent = qs.count()*100.0 / ps.count()
+    except:
+        precent = 0
     my_page = "srinath's"
     data = {
         "page":my_page,
         "total_count":qs.count(),
         "path_count":ps.count(),
-        "percent":qs.count()*100.0 / ps.count(),
+        "percent":precent,
     }
     PageVisit.objects.create(path =path)
     return render(request, "index.html", data)
+
+def about(request, *args, **kwargs):
+    return demo(request, *args, **kwargs)
