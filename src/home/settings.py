@@ -93,6 +93,7 @@ DATABASES = {
     }
 }
 
+DATABASE_URL = "mysql://root:tlqpePMnphJqPDCVlmeNTlJiBQRODeQa@tramway.proxy.rlwy.net:47834/railway"
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
