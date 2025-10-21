@@ -1,0 +1,22 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+Welcome back {{block.super}}
+<br>
+{% include 'user.html' %}
+
+Total_count: {{total_count}}
+<br>
+Page_count: {{path_count}}
+<br>
+Percent: {{percent}}
+
+{% endblock content %}
+
+{% block head %}
+
+Foundation {{ block.super }}
+
+
+{% endblock head %}
